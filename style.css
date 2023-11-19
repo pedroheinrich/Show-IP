@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    }
+
+    :root {
+        --bg-color: #201b2c;
+        --second-bg-color: #323946;
+        --text-color: #fff;
+        --main-color: #00ff88;
+    }
+
+body{
+    background: #201b2c;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+#caixaMae{
+    background-color: var(--second-bg-color);
+    height: 150px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
+    
+}
+#texto{
+    background:transparent;
+    color: var(--main-color);
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+#numeroIp{
+    background:transparent;
+    color: var(--main-color);
+    height: 50px;
+    width: 300px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}

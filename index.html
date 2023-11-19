@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar IP do Usuário</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div id="caixaMae">
+        <div id="texto">
+            <h1>Seu Endereço IP é:</h1>
+        </div>
+        <div id="numeroIp">
+            <p id="ip"></p>
+        </div>
+        <div id="olho">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAcJJREFUSEvt1EuoTmEUxvHfQUlCUZIilOuEMMGEGJABI9cYyGXIjJLOwMQMxYQyQWLmkpHkFgOklIlbknIZUEi5a9U62udtf+cdfbOz6xt87157/dd61rPeHl1+erqc3yCgqnBNoonYiNWYjAmZ8R1e4wrO4EMnUifAWBzELgytlPkLx3EAX8rYNsBsXENU/wMncA/P8hc5pmMGlmBnFvESy7Kz/5wSMAUPMA53sRUvKh3MxFkswBssxPu+b5qAYbiPebiFFfiZgdNwDCvxFaewpwEekV3OxU0sbQPsxSG8wnx8aiS4ilVFJ0cLSJjgEWJ+0fnpiG92EBpOxRpcKpL9KWLjdQx0dBG3HSfxMKXqB3iCOViPC8WHnzGqOGsDbE7bPkbI1Q+wAedyUPHyYyPhEeyuSBSuC4nGYy0uloAhuINFuJ2W+11AtuX/csjD03Uxu+tY3jbkOBuTOxBWC9iWHPpATm3a9EZu/bdOgDgficvZQSxabGnY9ymeI+wctp2FxdiRixbGWIfvzWo6XRVxPfRiP0K6gZ4oYh8OtwXVLrtJ2JQL1nfZ/cXblC46Pd/c3BJSA1SKr78eBFQ16rpE/wBu0VcZivimTgAAAABJRU5ErkJggg=="/>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        // Função para obter e exibir o IP do usuário
+        function mostrarIP() {
+            // Utilizando o serviço ipify para obter o IP
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipElement = document.getElementById('ip');
+                    ipElement.textContent = data.ip;
+                })
+                .catch(error => console.error('Erro ao obter IP:', error));
+        }
+
+        // Chamando a função quando a página é carregada
+        window.onload = mostrarIP;
+    </script>
+
+</body>
+</html>
